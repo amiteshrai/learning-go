@@ -1,4 +1,4 @@
-package main
+package deck
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ import (
 type deck []string
 
 // Create a new deck instance
-func newDeck() deck {
+func NewDeck() deck {
 	cards := deck{}
 	cardSuites := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
 	cardValues := []string{"Ace", "Two", "Three", "Four"}
@@ -27,7 +27,7 @@ func newDeck() deck {
 }
 
 // Deal the cards and return the remaining cards along with the hands.
-func deal(d deck, handSize int) (deck, deck) {
+func Deal(d deck, handSize int) (deck, deck) {
 	hand := d[:handSize]
 	updatedDeck := d[handSize:]
 
@@ -35,26 +35,26 @@ func deal(d deck, handSize int) (deck, deck) {
 }
 
 // Print deck cards
-func (d deck) print() {
+func (d deck) Print() {
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
 }
 
 // Convert a deck to a string
-func (d deck) toString() string {
+func (d deck) ToString() string {
 	return strings.Join([]string(d), "\n")
 }
 
 // Write a deck to a file
-func (d deck) saveToFile(filename string) error {
-	deckStr := d.toString()
+func (d deck) SaveToFile(filename string) error {
+	deckStr := d.ToString()
 	deckBytes := []byte(deckStr)
 	return ioutil.WriteFile(filename, deckBytes, 0666)
 }
 
 // Load a deck from a file
-func loadDeckFromFile(filename string) deck {
+func LoadDeckFromFile(filename string) deck {
 	deckBytes, err := ioutil.ReadFile(filename)
 	if err != nil {
 		fmt.Println("Error loading the deck from file")
@@ -68,7 +68,7 @@ func loadDeckFromFile(filename string) deck {
 }
 
 // Shuffle the deck
-func (d deck) shuffle() {
+func (d deck) Shuffle() {
 	seed := time.Now().UnixNano() // To ensure that seed is always different from previous execution
 	source := rand.NewSource(seed)
 	r := rand.New(source)

@@ -4,7 +4,9 @@ Learning fundamentals of the Google's Go programming language.
 
 ## Getting Started
 
-### Installing Go
+### Installing Go Using Homebrew On Mac
+
+    brew install go
 
 ### Setting up VS Code
 
@@ -39,18 +41,14 @@ Learning fundamentals of the Google's Go programming language.
     - An example: Array of strings
     - Declaration:
 
-        ```shell
-        names := [20]string
-        ```
+            names := [20]string
 
 - **Slice**
   - A variable length container for holding the values of a singular data type.
     - An example: Slice of strings
     - Declaration:
 
-        ```shell
-        names := [] string{"Amitesh Rai", "Go"}
-        ```
+            names := [] string{"Amitesh Rai", "Go"}
 
 - **Map**
   - A container for holding the key-value pairs.
