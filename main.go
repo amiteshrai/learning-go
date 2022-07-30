@@ -1,37 +1,94 @@
 package main
 
-import (
-	"amiteshrai/learning-go/src/deck"
-	"fmt"
-)
+import "fmt"
+
+// Define a contactinfo struct
+type ContactInfo struct {
+	email   string
+	city    string
+	zipcode int
+}
+
+// Define a person struct
+type Person struct {
+	firstName   string
+	lastName    string
+	contactinfo ContactInfo
+	// ContactInfo -- This is also a valid syntax
+}
+
+func (p Person) print() {
+	fmt.Printf("\n----------------\n")
+	fmt.Printf("%v", p)
+	fmt.Printf("\n----------------\n")
+}
+
+func (p Person) updateName(firstName string) Person {
+	p.firstName = firstName
+
+	return p
+}
+
+type location struct {
+	longitude float64
+	latitude  float64
+}
 
 func main() {
-	cards := deck.NewDeck()
-	fmt.Println("---------- Printing All Cards...")
-	cards.Print()
+	newYork := location{
+		latitude:  40.73,
+		longitude: -73.93,
+	}
 
-	fmt.Println("---------- Printing Remaining Cards...")
-	hand, remainingCards := deck.Deal(cards, 5)
-	remainingCards.Print()
+	newYork.changeLatitude()
 
-	fmt.Println("---------- Printing Cards In Hand...")
-	hand.Print()
+	fmt.Println(newYork)
+	name := "Bill"
 
-	fmt.Println("---------- Converting deck to string...")
-	cardsString := cards.ToString()
-	fmt.Println(cardsString)
-
-	fmt.Println("---------- Writing deck to the file system...")
-	filename := "output/deck.txt"
-	cards.SaveToFile(filename)
-
-	fmt.Println("---------- Loading deck from the file system...")
-	newCards := deck.LoadDeckFromFile(filename)
-	newCards.Print()
-
-	// newCards2 := loadDeckFromFile("cards.txt")
-	// fmt.Println(newCards2)
-	fmt.Println("---------- Shuffling cards...")
-	cards.Shuffle()
-	cards.Print()
+	fmt.Println(*&name)
 }
+
+func (lo *location) changeLatitude() {
+	(*lo).latitude = 41.0
+}
+
+// func main() {
+// 	// Create a struct by passing arguments in order
+// 	amitesh := Person{
+// 		"Amitesh",
+// 		"Rai",
+// 		ContactInfo{
+// 			email:   "amiteshrai@outlook.com",
+// 			city:    "Banglore",
+// 			zipcode: 562107,
+// 		},
+// 	}
+// 	amitesh.print()
+
+// 	// Create a struct by passing arguments as key-value pairs
+// 	amitesh = Person{
+// 		lastName:  "Rai",
+// 		firstName: "Amitesh",
+// 		contactinfo: ContactInfo{
+// 			email:   "amiteshrai@outlook.com",
+// 			city:    "Banglore",
+// 			zipcode: 562107,
+// 		},
+// 	}
+// 	fmt.Print(amitesh.contactinfo)
+
+// 	// Create a struct by passing arguments and omitting few
+// 	amitesh = Person{
+// 		lastName:  "Rai",
+// 		firstName: "Amitesh",
+// 	}
+// 	amitesh.print()
+// 	fmt.Println(amitesh.contactinfo) // Assign "" as default, called Zero Value in Go
+
+// 	// Create a struct
+// 	var sinchan Person
+// 	fmt.Println(sinchan)
+// 	fmt.Printf("%+v", sinchan)
+// 	amitesh.updateName(" Amitesh ")
+// 	amitesh.print()
+// }
