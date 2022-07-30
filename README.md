@@ -53,6 +53,9 @@ Learning fundamentals of the Google's Go programming language.
 - **Map**
   - A container for holding the key-value pairs.
 
+- **Struct**
+  - A container for holding the key-value pairs.
+
 ### Types Of Packages
 
 - **Executable**
