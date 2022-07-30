@@ -66,6 +66,13 @@ Learning fundamentals of the Google's Go programming language.
     - Used to represent a collection with a lot of different properties.
     - Is a pass-by value.
 
+### Interfaces In Golang
+
+- Interfaces are not generic types
+- Interfaces are `implicit`.
+- Interfaces are a contract to help us manage types.
+- Interfaces are tough. Understanding how to read them is very essential.
+
 ### Types Of Packages
 
 - **Executable**
