@@ -52,6 +52,19 @@ Learning fundamentals of the Google's Go programming language.
 
 - **Map**
   - A container for holding the key-value pairs.
+  - Properties:
+    - All keys and values must be of the same type
+    - Keys are indexed and we can iterate over them
+    - Used to represent collection of rerlated properties
+    - Is a pass-by reference.
+
+- **Struct**
+  - A container for holding the key-value pairs.
+  - Properties:
+    - Keys are always of type string, but values can be of different types.
+    - Keys don't support indexing.
+    - Used to represent a collection with a lot of different properties.
+    - Is a pass-by value.
 
 ### Types Of Packages
 

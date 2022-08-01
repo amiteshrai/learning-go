@@ -1,37 +1,34 @@
 package main
 
-import (
-	"amiteshrai/learning-go/src/deck"
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	cards := deck.NewDeck()
-	fmt.Println("---------- Printing All Cards...")
-	cards.Print()
+	// Create a map with initial values
+	colors := map[string]string{
+		"red":   "#ff0000",
+		"green": "#4bf745",
+	}
+	fmt.Println(colors)
 
-	fmt.Println("---------- Printing Remaining Cards...")
-	hand, remainingCards := deck.Deal(cards, 5)
-	remainingCards.Print()
+	// Declare variable of type map
+	// var colors2 map[string]string
+	colors2 := make(map[string]string)
+	fmt.Println(colors2)
+	colors2["white"] = "#ffffff"
+	colors2["101"] = "1010101"
+	fmt.Println(colors2)
+	delete(colors2, "white")
+	fmt.Println(colors2)
 
-	fmt.Println("---------- Printing Cards In Hand...")
-	hand.Print()
+	colors["white"] = "#ffffff"
+	// Iterate through map
+	printMap(colors)
 
-	fmt.Println("---------- Converting deck to string...")
-	cardsString := cards.ToString()
-	fmt.Println(cardsString)
+}
 
-	fmt.Println("---------- Writing deck to the file system...")
-	filename := "output/deck.txt"
-	cards.SaveToFile(filename)
-
-	fmt.Println("---------- Loading deck from the file system...")
-	newCards := deck.LoadDeckFromFile(filename)
-	newCards.Print()
-
-	// newCards2 := loadDeckFromFile("cards.txt")
-	// fmt.Println(newCards2)
-	fmt.Println("---------- Shuffling cards...")
-	cards.Shuffle()
-	cards.Print()
+func printMap(m map[string]string) {
+	fmt.Println("Printing map")
+	for k, v := range m {
+		fmt.Println("Hex code for", k, "is", v)
+	}
 }
