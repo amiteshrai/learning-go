@@ -87,3 +87,4 @@ Learning fundamentals of the Google's Go programming language.
 1. [Go By Example](https://gobyexample.com/)
 2. [Exercism's Go Track](https://exercism.org/tracks/go)
 3. [Go: The Complete Developer's Guide](https://www.udemy.com/course/go-the-complete-developers-guide/)
+4. [Visual Studio Code Shortcuts](https://www.sitepoint.com/visual-studio-code-keyboard-shortcuts/)
