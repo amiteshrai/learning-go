@@ -52,6 +52,26 @@ Learning fundamentals of the Google's Go programming language.
 
 - **Map**
   - A container for holding the key-value pairs.
+  - Properties:
+    - All keys and values must be of the same type
+    - Keys are indexed and we can iterate over them
+    - Used to represent collection of rerlated properties
+    - Is a pass-by reference.
+
+- **Struct**
+  - A container for holding the key-value pairs.
+  - Properties:
+    - Keys are always of type string, but values can be of different types.
+    - Keys don't support indexing.
+    - Used to represent a collection with a lot of different properties.
+    - Is a pass-by value.
+
+### Interfaces In Golang
+
+- Interfaces are not generic types
+- Interfaces are `implicit`.
+- Interfaces are a contract to help us manage types.
+- Interfaces are tough. Understanding how to read them is very essential.
 
 ### Types Of Packages
 
@@ -67,3 +87,4 @@ Learning fundamentals of the Google's Go programming language.
 1. [Go By Example](https://gobyexample.com/)
 2. [Exercism's Go Track](https://exercism.org/tracks/go)
 3. [Go: The Complete Developer's Guide](https://www.udemy.com/course/go-the-complete-developers-guide/)
+4. [Visual Studio Code Shortcuts](https://www.sitepoint.com/visual-studio-code-keyboard-shortcuts/)
